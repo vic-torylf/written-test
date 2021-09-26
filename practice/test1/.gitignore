@@ -1,0 +1,7 @@
+/node_modules
+
+# test
+/fileSystem.js
+/testfs.txt
+/server.js
+/.env

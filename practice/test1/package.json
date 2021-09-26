@@ -1,0 +1,31 @@
+{
+  "name": "question3",
+  "version": "1.0.0",
+  "description": "3. Nodejs application that can do the following:     a. GET method /hello and return “Hello World”     b. POST method /sortnum to take an array of numbers as input and return it back     sorted ascendingly     c. POST method /login to accept login and password as input, check that the login     is “admin” and password “Admin&8181” then create an access token and return     that token.     d. Modules Required     i. express js     ii. Passport.js",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dayjs": "^1.10.7",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "nodemon": "^2.0.13",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vic-torylf/written-test"
+  }
+}
