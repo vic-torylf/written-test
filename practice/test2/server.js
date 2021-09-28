@@ -41,15 +41,20 @@ app.get('/hello', (req, res) => {
     res.send('<body style="background:#0D0208;"><h1 style="text-align:center;color:#00FF41;">Hello World</h1>')
 })
 
-app.get('/login', checkNotAuthenticated, (req, res) => {
-    res.render('login.ejs')
+app.get('/sortnum', (req, res) => {
+    res.render('sortnum.ejs')
 })
 
-app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-}))
+app.get('/btcprice', (req, res) => {
+    res.render('bitcoinprice.ejs')
+})
+// app.get('/json', (req, res) => {
+//     res.json(
+//         {
+//             "key": "value"
+//         }
+//     )
+// })
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
     res.render('register.ejs')
@@ -71,6 +76,17 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
     console.log(users)
 })
 
+app.get('/login', checkNotAuthenticated, (req, res) => {
+    res.render('login.ejs')
+})
+
+app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}))
+
+
 app.delete('/logout', (req, res) => {
     req.logOut()
     res.redirect('/login')
@@ -89,5 +105,10 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
+
+app.use((req, res) => {
+    res.status(404)
+    res.send('404 not found')
+})
 
 app.listen(3000)

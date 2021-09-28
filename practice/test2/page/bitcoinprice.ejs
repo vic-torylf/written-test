@@ -1,0 +1,21 @@
+<h1 id="btc-price"></h1>
+<script>
+    let btcPriceTag = document.getElementById('btc-price');
+
+    function test() {
+        let getBtcPrice = async (apiURL) => {
+            const res = await fetch(apiURL);
+            const data = await res.json();
+            return data;
+        }
+    
+        getBtcPrice('https://api.coincap.io/v2/assets/bitcoin').then(data => {
+            console.log(data);
+            console.log(data.data.priceUsd);
+            
+            btcPriceTag.innerHTML = `${data.data.name}: ${parseFloat(data.data.priceUsd).toFixed(2)}`
+        });
+    }
+    test()
+    setInterval(test, 6000);
+</script>

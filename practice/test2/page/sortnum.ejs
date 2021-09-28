@@ -1,0 +1,11 @@
+<p id="ascend"></p>
+<p id="descend"></p>
+<script>
+    let ascend = document.getElementById("ascend")
+    let descend = document.getElementById("descend")
+    const numbers = [12, 2, -273.15, 543, 1, 33, 10, 105, -6]
+    let ascendNum = numbers.sort((a, b) => a - b)
+    ascend.innerHTML = `Sorted numbers (ascending order): ${ascendNum.join(', ')}`
+    let descendNum = numbers.sort((a, b) => b - a)
+    descend.innerHTML = `Sorted numbers (descending order): ${descendNum.join(', ')}`
+</script>
